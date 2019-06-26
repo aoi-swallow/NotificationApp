@@ -8,6 +8,8 @@ target 'NotificationApp' do
   # Pods for NotificationApp
   pod 'RealmSwift'
   pod 'R.swift'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
   target 'NotificationAppTests' do
     inherit! :search_paths

@@ -16,6 +16,34 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `belongingCell`.
+    static let belongingCell: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "belongingCell")
+    
+    fileprivate init() {}
+  }
+  
+  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
+  struct segue {
+    /// This struct is generated for `BelongingsListViewController`, and contains static references to 1 segues.
+    struct belongingsListViewController {
+      /// Segue identifier `showNewDataView`.
+      static let showNewDataView: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, BelongingsListViewController, NewAlertViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showNewDataView")
+      
+      /// Optionally returns a typed version of segue `showNewDataView`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showNewDataView(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, BelongingsListViewController, NewAlertViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.belongingsListViewController.showNewDataView, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
+    fileprivate init() {}
+  }
+  
   /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
@@ -74,13 +102,27 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct main: Rswift.StoryboardResourceType, Rswift.Validatable {
+    struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UINavigationController
+      
+      let belongingsListView = StoryboardViewControllerResource<BelongingsListViewController>(identifier: "belongingsListView")
       let bundle = R.hostingBundle
       let name = "Main"
+      let newAlertView = StoryboardViewControllerResource<NewAlertViewController>(identifier: "newAlertView")
+      
+      func belongingsListView(_: Void = ()) -> BelongingsListViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: belongingsListView)
+      }
+      
+      func newAlertView(_: Void = ()) -> NewAlertViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: newAlertView)
+      }
       
       static func validate() throws {
         if #available(iOS 11.0, *) {
         }
+        if _R.storyboard.main().belongingsListView() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'belongingsListView' could not be loaded from storyboard 'Main' as 'BelongingsListViewController'.") }
+        if _R.storyboard.main().newAlertView() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'newAlertView' could not be loaded from storyboard 'Main' as 'NewAlertViewController'.") }
       }
       
       fileprivate init() {}

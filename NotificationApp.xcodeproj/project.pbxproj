@@ -21,6 +21,8 @@
 		87856B1E22C2590A009A9A99 /* BelongingsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87856B1D22C2590A009A9A99 /* BelongingsListViewModel.swift */; };
 		87856B2022C25929009A9A99 /* NewAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87856B1F22C25928009A9A99 /* NewAlertViewController.swift */; };
 		87856B2222C25944009A9A99 /* NewAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87856B2122C25944009A9A99 /* NewAlertViewModel.swift */; };
+		87856B2422C26CF9009A9A99 /* ViewModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87856B2322C26CF9009A9A99 /* ViewModelBase.swift */; };
+		87856B2822C27E20009A9A99 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87856B2722C27E20009A9A99 /* Date+.swift */; };
 		A1AA704EF3D566938D468891 /* Pods_NotificationApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416CE81B31C475CE3A216D44 /* Pods_NotificationApp.framework */; };
 		C082A7E70A5D3B36408E43A4 /* Pods_NotificationAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7747EBC1E3B43730F6902F6D /* Pods_NotificationAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +68,8 @@
 		87856B1D22C2590A009A9A99 /* BelongingsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelongingsListViewModel.swift; sourceTree = "<group>"; };
 		87856B1F22C25928009A9A99 /* NewAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlertViewController.swift; sourceTree = "<group>"; };
 		87856B2122C25944009A9A99 /* NewAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlertViewModel.swift; sourceTree = "<group>"; };
+		87856B2322C26CF9009A9A99 /* ViewModelBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBase.swift; sourceTree = "<group>"; };
+		87856B2722C27E20009A9A99 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		879A8CCF25F71AC59F12310B /* Pods-NotificationAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationAppUITests/Pods-NotificationAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A5010B0C096B6360B1BD9D86 /* Pods-NotificationAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationAppUITests/Pods-NotificationAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB921496253A4CE783A6BF6F /* Pods-NotificationApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-NotificationApp/Pods-NotificationApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 				87856B1322C248BA009A9A99 /* ViewModel */,
 				87856B1222C2477E009A9A99 /* View */,
 				87856B1022C23D1E009A9A99 /* R.generated.swift */,
+				87856B2722C27E20009A9A99 /* Date+.swift */,
 				87856AE122C23A34009A9A99 /* AppDelegate.swift */,
 				87856AE522C23A34009A9A99 /* Main.storyboard */,
 				87856AE822C23A38009A9A99 /* Assets.xcassets */,
@@ -192,6 +197,7 @@
 		87856B1322C248BA009A9A99 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				87856B2322C26CF9009A9A99 /* ViewModelBase.swift */,
 				87856B1D22C2590A009A9A99 /* BelongingsListViewModel.swift */,
 				87856B2122C25944009A9A99 /* NewAlertViewModel.swift */,
 			);
@@ -351,6 +357,9 @@
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -359,6 +368,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -464,7 +476,9 @@
 				87856B1E22C2590A009A9A99 /* BelongingsListViewModel.swift in Sources */,
 				87856B1C22C258EF009A9A99 /* BelongingsListViewController.swift in Sources */,
 				87856B1822C2499D009A9A99 /* AlertDataModel.swift in Sources */,
+				87856B2822C27E20009A9A99 /* Date+.swift in Sources */,
 				87856B1A22C24A65009A9A99 /* AlertDataEntity.swift in Sources */,
+				87856B2422C26CF9009A9A99 /* ViewModelBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
